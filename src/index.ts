@@ -2,8 +2,8 @@
 
 import * as debug from "debug";
 
-import {default as Table} from "./entity/decorate/Table";
-import {default as Id} from "./entity/decorate/Id";
+import {default as Table} from "./entity/decorators/Table";
+import {default as Id} from "./entity/decorators/Id";
 
 const LOG = debug("index");
 
