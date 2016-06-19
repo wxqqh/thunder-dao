@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "sourceMap": true,
+        "outDir": "bin/",
+        "moduleResolution": "classic",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "exclude": [
+        "node_modules",
+        "wwwroot",
+        "public",
+        "typings",
+        "ux-typings"
+    ]
+}

@@ -1,0 +1,16 @@
+# 忽略掉所有文件名是*.js, *.js.map的文件.
+*.js
+*.js.map
+# 除了以下的
+!public/*/*.js
+!gulpfile.js
+
+# 默认的，这货node_modules不需要
+node_modules/
+# typescript 用到的 typings 也不需要
+typings/
+# 构建最终目录 bin 也不需要
+bin/
+
+# webstorm的配置文件也不需要
+.idea/

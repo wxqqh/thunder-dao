@@ -1,0 +1,6 @@
+{
+  "name": "thunder-dao",
+  "dependencies": {
+    "debug": "registry:npm/debug#2.0.0+20160511151334"
+  }
+}

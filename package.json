@@ -1,0 +1,30 @@
+{
+  "name": "thunder-dao",
+  "version": "1.0.0",
+  "description": "dao mysql",
+  "main": "bin/index.js",
+  "scripts": {
+    "compile": "tsc -p .",
+    "init": "npm run install:modules && npm run install:typings",
+    "install:modules": "npm install",
+    "install:typings": "typings install",
+    "build": "npm run compile",
+    "debug": "node bin/index.js",
+    "debug:local": "npm run compile && node debug bin/index.js",
+    "debug:remote": "npm run compile && node --debug-brk bin/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dao",
+    "mysql"
+  ],
+  "author": "wxqqhh@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "istanbul": "^0.4.3",
+    "mocha": "^2.5.3",
+    "tslint": "^3.11.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.0"
+  }
+}
