@@ -12,6 +12,7 @@
     "debug": "node bin/index.js",
     "debug:local": "npm run compile && node debug bin/index.js",
     "debug:remote": "npm run compile && node --debug-brk bin/index.js",
+    "debug:devtool": "npm run compile && devtool bin/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
