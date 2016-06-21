@@ -1,4 +1,5 @@
 "use strict";
+import Properties from "../util/Properties";
 
 /**
  * 实体表注解
@@ -30,21 +31,20 @@ export class Table {
     }
 
 }
+
 /**
  * 类注解
  * 添加表名
  */
-const table = (tableName: string) => {
+const table: (tableName:string) => ClassDecorator = (tableName: string) => {
     if (!tableName) {
         throw new TypeError(`tableName can not be empty`);
     }
 
     return (target) => {
-        Object.defineProperty(target, `$thunder`, {
-            enumerable: false,
-            value: {}
-        });
-        target.$thunder.table = new Table(tableName);
+        const $thunder = Properties.nonenumerable(target, `$thunder`);
+
+        $thunder.table = new Table(tableName);
     };
 };
 
