@@ -4,14 +4,20 @@ import * as debug from "debug";
 
 import {default as Table} from "./entity/decorators/Table";
 import {default as Id} from "./entity/decorators/Id";
+import {default as Comment} from "./entity/decorators/Comment";
+import {default as Column} from "./entity/decorators/Column";
 
 const LOG = debug("index");
 
+
 @Table("t_person")
+@Comment("test")
 class Person {
     @Id()
+    @Comment("test")
     public id: number = 0;
 
+    @Column("")
     public name: string = "";
 
     constructor(id, name) {
