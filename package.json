@@ -4,10 +4,11 @@
   "description": "dao mysql",
   "main": "bin/index.js",
   "scripts": {
-    "compile": "tsc -p .",
+    "compile": "npm run lint && tsc -p .",
     "init": "npm run install:modules && npm run install:typings",
     "install:modules": "npm install",
     "install:typings": "typings install",
+    "lint": "tslint -c ./tslint.json src/**/*.ts",
     "build": "npm run compile",
     "debug": "node bin/index.js",
     "debug:local": "npm run compile && node debug bin/index.js",
