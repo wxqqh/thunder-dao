@@ -44,7 +44,7 @@ const table: (tableName: string) => ClassDecorator = (tableName: string) => {
     return (target) => {
         const $thunder = Properties.nonenumerable(target, `$thunder`);
 
-        $thunder.table = new Table(tableName);
+        $thunder[`$table`] = new Table(tableName);
     };
 };
 
