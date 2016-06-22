@@ -14,5 +14,9 @@
         "public",
         "typings",
         "ux-typings"
+    ],
+    "files": [
+        "./src/index.ts",
+        "./typings/index.d.ts"
     ]
 }

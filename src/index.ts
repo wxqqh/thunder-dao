@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import * as debug from "debug";
 
 import {default as Table} from "./entity/decorators/Table";
@@ -8,7 +6,6 @@ import {default as Comment} from "./entity/decorators/Comment";
 import {default as Column} from "./entity/decorators/Column";
 
 const LOG = debug("index");
-
 
 @Table("t_person")
 @Comment("test")
