@@ -39,7 +39,7 @@ const id: (autoIncrement?: boolean) => PropertyDecorator = (autoIncrement?: bool
         const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
         if (!$thunder[name]) {
             $thunder[name] = {};
-        };
+        }
         $thunder[name][`$id`] = new Id(autoIncrement !== false);
     };
 };

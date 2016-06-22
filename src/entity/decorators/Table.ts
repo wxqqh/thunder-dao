@@ -36,7 +36,7 @@ export class Table {
  * 类注解
  * 添加表名
  */
-const table: (tableName:string) => ClassDecorator = (tableName: string) => {
+const table: (tableName: string) => ClassDecorator = (tableName: string) => {
     if (!tableName) {
         throw new TypeError(`tableName can not be empty`);
     }

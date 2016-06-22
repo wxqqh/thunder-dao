@@ -21,7 +21,7 @@ const str: () => PropertyDecorator = () => {
         const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
         if (!$thunder[name]) {
             $thunder[name] = {};
-        };
+        }
         $thunder[name][`$str`] = new Str();
     };
 };

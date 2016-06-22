@@ -64,7 +64,7 @@ const column: (columnName: string, hump?: boolean) => PropertyDecorator = (colum
         const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
         if (!$thunder[name]) {
             $thunder[name] = {};
-        };
+        }
         $thunder[name][`$column`] = new Column(columnName, hump !== false);
     };
 };

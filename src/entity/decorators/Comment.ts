@@ -46,7 +46,7 @@ const comment: (value: string) => (target, name?) => void = (value: string) => {
         if (name) {
             if (!$thunder[name]) {
                 $thunder[name] = {};
-            };
+            }
             $thunder[name][`$column`] = new Comment(value);
         } else {
             $thunder[`$column`] = new Comment(value);
