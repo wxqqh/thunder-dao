@@ -44,7 +44,6 @@ class FieldInfo {
      */
     public default: Default;
 
-
     /**
      * 注释注解
      * 
