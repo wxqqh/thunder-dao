@@ -1,6 +1,7 @@
 "use strict";
 import Properties from "../util/Properties";
 import Table from "../info/Table";
+import TableInfo from "../info/TableInfo";
 
 /**
  * 类注解
@@ -13,8 +14,10 @@ const table: (tableName: string) => ClassDecorator = (tableName: string) => {
 
     return (target) => {
         const $thunder = Properties.nonenumerable(target, `$thunder`);
+        const tableInfo = new TableInfo();
 
-        $thunder[`$table`] = new Table(tableName);
+        tableInfo.table = new Table(tableName);
+        $thunder[`$tableInfo`] = tableInfo;
     };
 };
 

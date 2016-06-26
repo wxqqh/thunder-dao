@@ -1,6 +1,7 @@
 "use strict";
 
 import Properties from "../util/Properties";
+import TableInfo from "../info/TableInfo";
 import PK from "../info/PK";
 
 /**
@@ -12,9 +13,9 @@ const pk: (primaryKeys: Array<string>) => ClassDecorator = (primaryKeys: Array<s
         if (!primaryKeys.length) {
             throw new TypeError(`primaryKeys can not be empty`);
         }
-        const $thunder = Properties.nonenumerable(target, `$thunder`);
+        const $thunder: TableInfo = Properties.nonenumerable(target, `$thunder`);
 
-        $thunder[`$pk`] = new PK(primaryKeys);
+        $thunder.pk = new PK(primaryKeys);
     };
 };
 
