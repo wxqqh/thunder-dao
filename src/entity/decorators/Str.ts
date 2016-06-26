@@ -1,16 +1,7 @@
 "use strict";
 
 import Properties from "../util/Properties";
-
-/**
- * 声明一个字段为字符型主键, 不能为空
- * 声明后的字段值不能为空
- * 字段注解
- * 
- * @export
- * @class Str
- */
-export class Str { }
+import Str from "../info/Str";
 
 /**
  * 标识当前字段为一个字符型主键。 这字段的必须为`String`, 否者插入数据库的时候会出问题

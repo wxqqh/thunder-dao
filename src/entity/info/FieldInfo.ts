@@ -1,10 +1,10 @@
 "use strict";
 
-import {Id} from "../decorators/Id";
-import {Str} from "../decorators/Str";
-import {Default} from "../decorators/Default";
-import {Column} from "../decorators/Column";
-import {Comment} from "../decorators/Comment";
+import Id from "./Id";
+import Str from "./Str";
+import Default from "./Default";
+import Column from "./Column";
+import Comment from "./Comment";
 
 /**
  * 字段信息
@@ -16,6 +16,7 @@ class FieldInfo {
      * ID注解(数值型)
      * 
      * @type {Id}
+     * @see "./Id"
      */
     public id: Id;
 
@@ -23,6 +24,7 @@ class FieldInfo {
      * Str注解(字符型)
      * 
      * @type {Str}
+     * @see "./Str"
      */
     public str: Str;
 
@@ -30,6 +32,7 @@ class FieldInfo {
      * 列注解
      * 
      * @type {Column}
+     * @see "./Column"
      */
     public column: Column;
 
@@ -37,6 +40,7 @@ class FieldInfo {
      * 默认值注解
      * 
      * @type {Default}
+     * @see "./Default"
      */
     public default: Default;
 
@@ -45,6 +49,7 @@ class FieldInfo {
      * 注释注解
      * 
      * @type {Comment}
+     * @see "./Comment"
      */
     public comment: Comment;
 }
