@@ -1,8 +1,8 @@
 "use strict";
 
-import {Table} from "../decorators/Table";
-import {PK} from "../decorators/PK";
-import {Comment} from "../decorators/Comment";
+import Table from "./Table";
+import PK from "./PK";
+import Comment from "./Comment";
 
 /**
  * 数据表信息
@@ -14,7 +14,7 @@ class TableInfo {
      * 数据表注解
      * 
      * @type {Table}
-     * @see "../decorators/Table"
+     * @see "./Table"
      */
     public table: Table;
 
@@ -22,7 +22,7 @@ class TableInfo {
      * 表主键注解
      * 
      * @type {PK}
-     * @see "../decorators/PK"
+     * @see "./PK"
      */
     public pk: PK;
 
@@ -30,7 +30,7 @@ class TableInfo {
      * 注释注解
      * 
      * @type {Comment}
-     * @see "../decorators/Comment"
+     * @see "./Comment"
      */
     public comment: Comment;
 }
