@@ -11,10 +11,8 @@ import FieldInfo from "../info/FieldInfo";
 const str: () => PropertyDecorator = () => {
     return (target, name) => {
         const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
-        if (!$thunder[name]) {
-            $thunder[name] = new FieldInfo();
-        }
-        const fieldInfo: FieldInfo = $thunder[name];
+        const fieldInfo: FieldInfo = FieldInfo.getFieldInfoInstance($thunder, name);
+
         fieldInfo.str = new Str();
     };
 };

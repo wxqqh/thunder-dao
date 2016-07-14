@@ -11,10 +11,8 @@ import FieldInfo from "../info/FieldInfo";
 const id: (autoIncrement?: boolean) => PropertyDecorator = (autoIncrement?: boolean) => {
     return (target, name) => {
         const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
-        if (!$thunder[name]) {
-            $thunder[name] = new FieldInfo();
-        }
-        const fieldInfo: FieldInfo = $thunder[name];
+        const fieldInfo: FieldInfo = FieldInfo.getFieldInfoInstance($thunder, name);
+
         fieldInfo.id = new Id(autoIncrement !== false);
     };
 };

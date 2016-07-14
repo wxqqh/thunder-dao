@@ -11,10 +11,7 @@ import FieldInfo from "../info/FieldInfo";
 const column: (columnName: string, hump?: boolean) => PropertyDecorator = (columnName: string, hump?: boolean) => {
     return (target, name) => {
         const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
-        if (!$thunder[name]) {
-            $thunder[name] = new FieldInfo();
-        }
-        const fieldInfo: FieldInfo = $thunder[name];
+        const fieldInfo: FieldInfo = FieldInfo.getFieldInfoInstance($thunder, name);
         fieldInfo.column = new Column(columnName, hump !== false);
     };
 };
