@@ -13,6 +13,21 @@ import Comment from "./Comment";
  */
 class FieldInfo {
     /**
+     * 获取指定对象的FieldInfo实例
+     * 如果对象没有, 则创建一个新的FieldInfo
+     * 
+     * @static
+     * @param {Object} target 目标对象
+     * @param {String | Symbol} name 字段名称
+     * @returns {FieldInfo} FieldInfo实例
+     */
+    public static getFieldInfoInstance(target: any, name: string | symbol): FieldInfo {
+        if (!target[name]) {
+            target[name] = new FieldInfo();
+        }
+        return target[name];
+    }
+    /**
      * ID注解(数值型)
      * 
      * @type {Id}

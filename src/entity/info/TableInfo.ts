@@ -10,6 +10,21 @@ import Comment from "./Comment";
  * @class TableInfo
  */
 class TableInfo {
+
+    /**
+     * 获取指定对象的TableInfo实例
+     * 如果对象没有, 则创建一个新的TableInfo
+     * 
+     * @static
+     * @param {Object} target 目标对象
+     * @returns {TableInfo} TableInfo实例
+     */
+    public static getTableInfoInstance(target: Object): TableInfo {
+        if (!target[`$tableInfo`]) {
+            target[`$tableInfo`] = new TableInfo();
+        }
+        return target[`$tableInfo`];
+    }
     /**
      * 数据表注解
      * 
