@@ -11,15 +11,16 @@ import FieldInfo from "../info/FieldInfo";
  */
 const comment: (value: string) => (target, name?) => void = (value: string) => {
     return (target, name?) => {
-        const $thunder: TableInfo = Properties.nonenumerable(target.constructor, `$thunder`);
         if (name) {
-            if (!$thunder[name]) {
-                $thunder[name] = new FieldInfo();
-            }
-            const fieldInfo: FieldInfo = $thunder[name];
+            const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
+            const fieldInfo: FieldInfo = FieldInfo.getFieldInfoInstance($thunder, name);
+
             fieldInfo.comment = new Comment(value);
         } else {
-            $thunder.comment = new Comment(value);
+            const $thunder = Properties.nonenumerable(target, `$thunder`);
+            const $tableInfo = TableInfo.getTableInfoInstance($thunder);
+
+            $tableInfo.comment = new Comment(value);
         }
     };
 };

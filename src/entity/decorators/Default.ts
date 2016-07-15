@@ -12,11 +12,8 @@ import FieldInfo from "../info/FieldInfo";
 const defaultDecorator: (value: any) => PropertyDecorator = (value: any) => {
     return (target, name) => {
         const $thunder = Properties.nonenumerable(target.constructor, `$thunder`);
+        const fieldInfo: FieldInfo = FieldInfo.getFieldInfoInstance($thunder, name);
 
-        if (!$thunder[name]) {
-            $thunder[name] = new FieldInfo();
-        }
-        const fieldInfo: FieldInfo = $thunder[name];
         fieldInfo.default = new Default(value);
 
     };

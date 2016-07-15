@@ -13,9 +13,10 @@ const pk: (primaryKeys: Array<string>) => ClassDecorator = (primaryKeys: Array<s
         if (!primaryKeys.length) {
             throw new TypeError(`primaryKeys can not be empty`);
         }
-        const $thunder: TableInfo = Properties.nonenumerable(target, `$thunder`);
+        const $thunder = Properties.nonenumerable(target, `$thunder`);
+        const $tableInfo = TableInfo.getTableInfoInstance($thunder);
 
-        $thunder.pk = new PK(primaryKeys);
+        $tableInfo.pk = new PK(primaryKeys);
     };
 };
 
