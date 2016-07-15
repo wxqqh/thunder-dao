@@ -13,7 +13,7 @@ import Str from "../entity/info/Str";
 import Column from "../entity/info/Column";
 
 class Dao implements IDao {
-    public create(Klass: any): Promise<any> {
+    public async create(Klass: any): Promise<any> {
         const tableInfo = TableInfo.getTableInfoInstance(Klass);
 
         const SQL = ``;
