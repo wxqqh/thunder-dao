@@ -16,14 +16,14 @@ class TableInfo {
      * 如果对象没有, 则创建一个新的TableInfo
      * 
      * @static
-     * @param {Object} target 目标对象
+     * @param {Object} klass 目标对象
      * @returns {TableInfo} TableInfo实例
      */
-    public static getTableInfoInstance(target: Object): TableInfo {
-        if (!target[`$tableInfo`]) {
-            target[`$tableInfo`] = new TableInfo();
+    public static getTableInfoInstance(klass: Object): TableInfo {
+        if (!klass[`$tableInfo`]) {
+            klass[`$tableInfo`] = new TableInfo();
         }
-        return target[`$tableInfo`];
+        return klass[`$tableInfo`];
     }
     /**
      * 数据表注解

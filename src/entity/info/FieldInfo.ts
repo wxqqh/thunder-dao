@@ -17,15 +17,16 @@ class FieldInfo {
      * 如果对象没有, 则创建一个新的FieldInfo
      * 
      * @static
-     * @param {Object} target 目标对象
+     * @param {Object} klass 目标对象
      * @param {String | Symbol} name 字段名称
      * @returns {FieldInfo} FieldInfo实例
      */
-    public static getFieldInfoInstance(target: any, name: string | symbol): FieldInfo {
-        if (!target[name]) {
-            target[name] = new FieldInfo();
+    public static getFieldInfoInstance(klass: any, name: string | symbol): FieldInfo {
+
+        if (!klass[name]) {
+            klass[name] = new FieldInfo();
         }
-        return target[name];
+        return klass[name];
     }
     /**
      * ID注解(数值型)
